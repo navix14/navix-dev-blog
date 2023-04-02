@@ -39,17 +39,15 @@ export default function Login() {
 
         // Set auth information
         login(res.payload.token);
-        console.log(token);
 
-        if (prevRoute) {
-            setTimeout(() => { navigate(prevRoute) }, 0);
-        } else {
-            setTimeout(() => { navigate("/home") }, 0);
-        }
+        // Ensure navigation happens after auth state has propagated
+        // Otherwise, GuardedRoute component may redirect back to login route.
+        setTimeout(() => navigate(prevRoute || "/home"), 0);
     };
 
     const handleLogout = (e) => {
         e.preventDefault();
+
         logout();
         navigate("/home");
     }
