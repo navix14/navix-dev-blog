@@ -1,25 +1,36 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect, useState } from 'react';
+import { RouterProvider } from 'react-router-dom';
+import { useCookies } from 'react-cookie';
+import AppProvider from './context/AppProvider';
+import router from './routes/routes';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    const [appInitialized, setAppInitialized] = useState(false);
+    const [token, setToken] = useState("");
+    const [darkMode, setDarkMode] = useState(false);
+    const [cookies] = useCookies();
+
+    useEffect(() => {
+        if (localStorage.getItem("dark-mode") === "true") {
+            document.documentElement.classList.add("dark-mode");
+            setDarkMode("true");
+        }
+
+        if (cookies.token) {
+            setToken(cookies.token);
+        }
+
+        setAppInitialized(true);
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, []);
+
+    return (
+        <React.StrictMode>
+            <AppProvider init={{ token, darkMode, setToken, setDarkMode }}>
+                {appInitialized ? <RouterProvider router={router} /> : null}
+            </AppProvider>
+        </React.StrictMode>
+    );
 }
 
 export default App;

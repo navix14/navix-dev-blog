@@ -1,0 +1,19 @@
+@font-face {
+    font-family: 'Consolas';
+    src: local('Consolas'),
+        url('../../public/fonts/consola.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Segoe UI';
+    font-style: normal;
+    src: local('Segoe UI'),
+        url('../../public/fonts/segoeui.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Segoe UI';
+    font-style: bold;
+    src: local('Segoe UI'),
+        url('../../public/fonts/segoeuib.ttf') format('truetype');
+}

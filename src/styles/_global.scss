@@ -1,0 +1,130 @@
+:root {
+    --text-color: black;
+    --bg-color: white;
+    --accent-color: #c51414;
+    --accent-color-dark: #911212;
+    --accent-link: white;
+    --light-gray: #a0a0a0;
+    --gray: #808080;
+    --dark-gray: #3b3b3b;
+    --code-block-bg: #2d2d2d;
+    --code-block-text: #cccccc;
+    --input-border: #707070;
+    --btn-red: #B84949;
+    --btn-red-hover: #863636;
+    --btn-green: #42B173;
+    --btn-green-hover: #2e7e50;
+    --btn-blue: #4583B8;
+    --btn-blue-hover: #315d83;
+    --mobile-links-bg: #dfdfdf;
+    --mobile-links: #9e9e9e;
+    --bg-blockquote: #fafafa;
+    --border-blockquote: #cccccc;
+    --code-bg-color: rgb(241, 241, 241);
+    --code-color: #c51414;
+
+    &.dark-mode {
+        --text-color: white;
+        --bg-color: rgb(29, 29, 29);
+        --accent-color: #c51414;
+        --accent-color-dark: #911212;
+        --accent-link: white;
+        --light-gray: #a0a0a0;
+        --gray: #808080;
+        --dark-gray: #7a7a7a;
+        --code-block-bg: #2d2d2d;
+        --code-block-text: #cccccc;
+        --input-border: #707070;
+        --btn-red: #B84949;
+        --btn-red-hover: #863636;
+        --btn-green: #42B173;
+        --btn-green-hover: #2e7e50;
+        --btn-blue: #4583B8;
+        --btn-blue-hover: #315d83;
+        --mobile-links-bg: #181818;
+        --mobile-links: #7a7a7a;
+        --bg-blockquote: #2c2c2c;
+        --border-blockquote: #444444;
+        --code-bg-color: #2d2d2d;
+        --code-color: #f12d2d;
+    }
+}
+
+html,
+body {
+    background: var(--bg-color);
+    font-family: 'Roboto';
+    padding: 0;
+    margin: 0;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    font-family: inherit;
+    padding: 0;
+    margin: 0;
+}
+
+h1 {
+    color: var(--text-color);
+    font-size: 1.6rem;
+    font-weight: 700;
+}
+
+a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: 500;
+}
+
+ul {
+    list-style: none;
+}
+
+input {
+    color: inherit;
+    outline: none;
+    background: none;
+    border: none;
+    border: 1px solid var(--input-border);
+}
+
+button {
+    outline: none;
+    background: none;
+    border: none;
+
+    color: white;
+    width: 150px;
+    padding: 10px 50px;
+    transition: background-color 0.1s ease-in-out;
+}
+
+.container {
+    margin: 0 auto;
+    max-width: 960px;
+    padding: 0 20px;
+}
+
+.loader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 110px;
+}
+
+.separator {
+    margin: 20px 0;
+    border-bottom: 2px solid var(--gray);
+}
+
+.page {
+    opacity: 0;
+    transition: all 0.5s ease;
+
+    &.active {
+        opacity: 1;
+    }
+}

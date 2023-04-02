@@ -1,0 +1,123 @@
+.projects {
+    color: var(--text-color);
+
+    & > h1 {
+        margin-bottom: 1.5rem;
+    }
+}
+
+.projects-list {
+    display: flex;
+    flex-direction: column;
+
+    .project {
+        border: 1px solid var(--accent-color);
+
+        &:not(:last-child) {
+            margin-bottom: 1.3rem;
+        }
+
+        .project-title {
+            h2 {
+                font-size: 1.3rem;
+                font-weight: 400;
+            }
+
+            cursor: pointer;
+            user-select: none;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px;
+            border-bottom: 1px solid var(--accent-color);
+
+            .left {
+                display: flex;
+                align-items: center;
+
+                .project-tags {
+                    display: flex;
+                    align-items: center;
+                    margin: 0 1rem;
+
+                    .project-tag {
+                        padding: 5px 10px;
+                        font-size: 0.8rem;
+                        background: var(--accent-color);
+
+                        &:not(:last-child) {
+                            margin-right: 1rem;
+                        }
+                    }
+                }
+            }
+
+            div.open svg {
+                transform: rotate(180deg);
+            }
+
+            div svg {
+                transition: transform 0.2s ease;
+                cursor: pointer;
+            }
+        }
+
+        .project-content {
+            padding: 0 15px;
+            overflow: hidden;
+            height: 0px;
+            transition: all 0.5s ease;
+
+            .content-section {
+                h3 {
+                    font-size: 1rem;
+                    margin-bottom: 0.5rem;
+                }
+
+                p, li {
+                    line-height: 1.5;
+                    font-weight: 300;
+                    color: var(--text-color);
+                    opacity: 0.8;
+                }
+                
+                a {
+                    padding-bottom: 2px;
+                    border-bottom: 2px solid var(--accent-color);
+                    transition: color 0.1s ease;
+
+                    &.icon-link {
+                        padding: 0;
+                        border: none;
+                    }
+
+                    &:hover {
+                        color: var(--accent-color);
+                    }
+                }
+
+                ul {
+                    li {
+                        &::before {
+                            content: "•";
+                            margin-right: 0.7rem;
+                        }
+
+                        a {
+                            margin-right: 0.5em;
+                        }
+
+                        &:not(:last-child) {
+                            margin-bottom: 0.3rem;
+                        }
+                    }
+                }
+
+                &:not(:last-child) {
+                    margin-bottom: 1.5rem;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,151 @@
+.home {
+    color: var(--text-color);
+}
+
+.two-column {
+    display: flex;
+
+    @media (max-width: 950px) {
+        flex-direction: column;
+    }
+
+    .left {
+        display: flex;
+        flex-direction: column;
+        margin-right: 50px;
+
+        & > * {
+            margin-bottom: 30px;
+        }
+
+        @media (max-width: 950px) {
+            margin-right: 0;
+        }
+    }
+
+    .right {
+        display: flex;
+        flex-direction: column;
+
+        & > * {
+            margin-bottom: 30px;
+        }
+    }
+}
+
+.section-box {
+    display: flex;
+    text-transform: uppercase;
+    color: var(--accent-color);
+
+    p {
+        padding: 5px 30px;
+        border: 1px solid var(--accent-color);
+    }
+}
+
+.intro-text {
+    font-weight: 500;
+    line-height: 2;
+}
+
+.section-wrap {
+    display: flex;
+    flex-direction: column;
+
+    .section {
+        &:first-child {
+            margin-bottom: 30px;
+        }
+    }
+
+    @media (max-width: 950px) {
+        flex-direction: row;
+        justify-content: center;
+
+        .section {
+            &:first-child {
+                margin-right: 80px;
+            }
+        }
+    }
+
+    @media (max-width: 600px) {
+        flex-direction: column;
+
+        .section {
+            margin-right: 0 !important;
+        }
+    }
+}
+
+.section {
+    h2 {
+        font-weight: 500;
+        font-size: 1rem;
+        margin-bottom: 20px;
+    }
+
+    .section-list {
+        display: flex;
+        flex-direction: column;
+        margin-left: 20px;
+
+        li {
+            color: var(--light-gray);
+
+            &::before {
+                content: "›";
+                color: var(--accent-color);
+                margin-right: 10px;
+            }
+
+            &:not(:last-child) {
+                margin-bottom: 15px;
+            }
+        }
+    }
+
+    .section-list-bullet {
+        margin-bottom: 30px;
+
+        &.yellow {
+            li {
+                &::before {
+                    content: "";
+                    display: inline-block;
+                    width: 10px;
+                    height: 10px;
+                    border-radius: 7.5px;
+                    background-color: #E1AD33;
+                    margin-right: 10px;
+                }
+            }
+        }
+
+        ul {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            column-gap: 60px;
+            row-gap: 30px;
+
+            @media (max-width: 500px) {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            li {
+                width: 120px;
+
+                &::before {
+                    content: "";
+                    display: inline-block;
+                    width: 10px;
+                    height: 10px;
+                    border-radius: 7.5px;
+                    background-color: #33E173;
+                    margin-right: 10px;
+                }
+            }
+        }
+    }
+}

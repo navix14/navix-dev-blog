@@ -1,0 +1,115 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px 0;
+
+    .navbar-left {
+        display: flex;
+        align-items: center;
+
+        h1.logo {
+            color: var(--text-color);
+            transition: color 0.2s ease-in-out;
+
+            span {
+                color: var(--accent-color);
+            }
+        }
+    }
+
+    .mobile-menu {
+        display: none;
+        color: var(--text-color);
+
+        @media (max-width: 500px) {
+            display: flex;
+            align-items: center;
+            transition: all 0.2s ease;
+
+            &.active {
+                transform: rotate(90deg);
+            }
+
+            svg {
+                margin-left: 20px;
+                transition: all 0.2s ease;
+            }
+
+            svg.open {
+                transform: rotate(-90deg) scaleX(0.8) scaleY(1.1);
+            }
+        }
+    }
+
+    .mobile-links {
+        display: flex;
+        flex-direction: column;
+
+        overflow: hidden;
+        transform: scaleY(0);
+        transform-origin: top;
+        transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+
+        position: absolute;
+        left: 0;
+        top: 119px;
+        width: 100vw;
+        background: var(--mobile-links-bg);
+
+        a {
+            display: flex;
+            justify-content: center;
+
+            width: 100%;
+            font-size: 1.3em;
+            font-weight: 500;
+            padding: 30px 0;
+
+            color: var(--mobile-links);
+
+            transition: all 0.2s ease;
+
+            &.active-link {
+                color: var(--text-color);
+            }
+        }
+
+        &.open {
+            transform: scaleY(1);
+        }
+    }
+
+    .links {
+        display: flex;
+        align-items: center;
+
+        .dark-mode {
+            color: var(--text-color);
+            cursor: pointer;
+        }
+
+        @media (max-width: 500px) {
+            display: none;
+        }
+
+        a {
+            padding: 10px 0;
+            margin-right: 30px;
+            color: var(--light-gray);
+            transition: color 0.1s ease-in-out;
+
+            &.active-link {
+                color: var(--text-color);
+            }
+
+            &:hover {
+                color: var(--text-color);
+            }
+
+            &:last-child {
+                margin-right: 0;
+            }
+        }
+    }
+}
