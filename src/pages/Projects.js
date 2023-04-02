@@ -69,6 +69,34 @@ const mockProjects = [
             }
         ],
         link: "https://github.com/navix14/detours-x64"
+    },
+    {
+        title: "Personal website / blog",
+        description: "The website you're on right now!",
+        tags: ["Web", "React", "JavaScript"],
+        tools: [
+            {
+                name: "React",
+                link: "https://react.dev/",
+                description: "(obviously)"
+            },
+            {
+                name: "react-markdown",
+                link: "https://github.com/remarkjs/react-markdown",
+                description: "for parsing and rendering markdown"
+            },
+            {
+                name: "ExpressJS",
+                link: "https://expressjs.com/",
+                description: "as the HTTP server backend",
+            },
+            {
+                name: "MongoDB",
+                link: "https://www.mongodb.com/",
+                description: "backend storage for blog posts, users etc."
+            }
+        ],
+        link: "https://github.com/navix14/navix-dev-blog"
     }
 ]
 
